@@ -1,0 +1,62 @@
+.searchbar {
+  height: 40px;
+  width: 400px;
+  margin-left: 10px;
+  border-style: none;
+  border: none;
+  outline: none;
+}
+
+.searchParent {
+  margin-top: 40px;
+  margin-left: 500px;
+  height: 50px;
+  width: 500px;
+  background: #fdfcfc;
+  border: 1px solid #dadada;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 10%);
+  border-radius: 26px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 25px;
+}
+
+.searchIconDiv {
+  height: 50px;
+  width: 20px;
+  border-left: 1px solid rgb(190, 188, 188);
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.icon {
+  padding-top: 12px;
+  padding-left: 5px;
+}
+
+.emptyImage {
+  position: absolute;
+  left: 39.05%;
+  right: 39.05%;
+  top: 41.32%;
+  bottom: 40.94%;
+}
+
+.emptyImage img {
+  width: 450px;
+}
+
+.pill {
+  background-color: #ddd;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+}
