@@ -1,30 +1,17 @@
 import emptyIcon from "../asset/emptyScreen.png";
-import searchIcon from "../asset/search.png";
 import "../style/searchBar.scss";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import React, { useState, useEffect } from "react";
-// const handleClick = () => {
-//   console.log("Click Handled");
-// };
-// var filterList: String[] = [];
-// const suggestCity = (val: string) => {
-//   var data = require("../asset/cities.json");
-//   data.map((value: any) => {
-//     let targetName: String = value["name"];
-//     if (
-//       targetName.toLocaleLowerCase().startsWith(val.toLowerCase()) &&
-//       val != ""
-//     ) {
-//       console.log(value["name"]);
-//       filterList.push(value["name"]);
-//     }
-//   });
-//   console.log(filterList);
-// };
+import { searchAction } from "../redux/Action";
+import WeatherCard from "./WeatherCard";
+import { City } from "../interfaces";
+
 const SearchBar: React.FC = () => {
   const [searchKey, setSearchKey] = useState("");
   const [suggestedCity, setSuggestedCity] = useState([] as any);
   const [selectCity, setSelectCity] = useState("");
+  const [cardInfo, setCardInfo] = useState<City>();
+
   const handleChange = (e: any) => {
     // debounce
     setSearchKey(e.target.value);
@@ -45,10 +32,24 @@ const SearchBar: React.FC = () => {
       setSuggestedCity([]);
     }
   }, [searchKey]);
-  const test = (e: any) => {
+
+  const handleCityClick = (e: any) => {
     setSelectCity(e);
     console.log(e);
   };
+
+  const handleSearch = () => {
+    searchAction(selectCity).then((response) => {
+      if (response.status === 200) {
+        //console.log(response["data"]);
+        setCardInfo(response["data"]);
+        console.log(cardInfo);
+      } else {
+        console.error(response);
+      }
+    });
+  };
+
   return (
     <div>
       <div className="searchParent">
@@ -61,13 +62,13 @@ const SearchBar: React.FC = () => {
           onChange={(e) => handleChange(e)}
         />
         <div className="searchIconDiv">
-          <SearchOutlinedIcon className="icon" />
+          <SearchOutlinedIcon className="icon" onClick={handleSearch} />
         </div>
       </div>
       <div style={{ margin: "10px" }}>
         {suggestedCity.map((city: String) => {
           return (
-            <button className="pill" onClick={(e) => test(city)}>
+            <button className="pill" onClick={(e) => handleCityClick(city)}>
               {city}
             </button>
           );
@@ -79,6 +80,7 @@ const SearchBar: React.FC = () => {
           <p>No location added to watchlist</p>
         </div>
       )}
+      {cardInfo !== null && <WeatherCard />}
     </div>
   );
 };
