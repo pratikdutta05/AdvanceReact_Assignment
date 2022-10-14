@@ -16,6 +16,7 @@ const SearchBar: React.FC = () => {
     // debounce
     setSearchKey(e.target.value);
     setSelectCity(e.target.value);
+    setCardInfo(undefined);
   };
   useEffect(() => {
     if (searchKey) {
@@ -41,7 +42,7 @@ const SearchBar: React.FC = () => {
   const handleSearch = () => {
     searchAction(selectCity).then((response) => {
       if (response.status === 200) {
-        //console.log(response["data"]);
+        // console.log(response["data"]);
         setCardInfo(response["data"]);
         console.log(cardInfo);
       } else {
@@ -80,7 +81,7 @@ const SearchBar: React.FC = () => {
           <p>No location added to watchlist</p>
         </div>
       )}
-      {cardInfo !== null && <WeatherCard />}
+      {cardInfo !== undefined && <WeatherCard weather={cardInfo} />}
     </div>
   );
 };
