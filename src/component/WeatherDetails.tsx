@@ -31,7 +31,7 @@ const WeatherDetails = () => {
         </NavLink>
         <div className="addList" onClick={addWish}>
           <div>Add to list </div>
-          <img src={union} />
+          <img src={union} className="plus" />
         </div>
       </div>
       <div>
@@ -39,7 +39,7 @@ const WeatherDetails = () => {
           <img src={url} />
         </div>
         <div className="location">{location.state.props.weather.name}</div>
-        <div className="temp">
+        <div className="temp_details">
           {Math.ceil(location.state.props.weather.main.temp - 273.15)}°
         </div>
       </div>

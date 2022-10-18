@@ -1,16 +1,16 @@
 .searchbar {
-  height: 40px;
-  width: 400px;
-  margin-left: 10px;
+  height: 90%;
+  width: 100%;
+  margin-left: 5%;
   border-style: none;
   border: none;
   outline: none;
 }
 
 .searchParent {
-  margin-top: 40px;
-  margin-left: 400px;
-  width: 831px;
+  margin-top: 5%;
+  margin-left: 22%;
+  width: 55%;
   height: 58px;
   background: #fdfcfc;
   border: 1px solid #dadada;
@@ -21,6 +21,12 @@
   justify-content: space-between;
   align-items: center;
   border-radius: 25px;
+}
+
+.cityList {
+  margin-left: 22%;
+  width: 55%;
+  height: 20% !important;
 }
 
 .searchIconDiv {
@@ -37,15 +43,15 @@
 }
 
 .emptyImage {
-  position: absolute;
   left: 39.05%;
   right: 39.05%;
-  top: 41.32%;
+  top: 41.39%;
+  margin-top: 10%;
   bottom: 40.94%;
 }
 
 .emptyImage img {
-  width: 450px;
+  width: 30%;
 }
 
 .pill {

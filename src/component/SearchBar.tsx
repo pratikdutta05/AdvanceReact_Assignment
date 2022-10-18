@@ -66,7 +66,7 @@ const SearchBar: React.FC = () => {
           <SearchOutlinedIcon className="icon" onClick={handleSearch} />
         </div>
       </div>
-      <div style={{ margin: "10px" }}>
+      <div className="cityList">
         {suggestedCity.map((city: String) => {
           return (
             <button className="pill" onClick={(e) => handleCityClick(city)}>
