@@ -20,7 +20,6 @@ const WeatherDetails = () => {
   var url: string = `https://openweathermap.org/img/wn/${pic}@4x.png`;
 
   const addWish = () => {
-    console.log("FSF");
     dispatch(addUser(location.state.props.weather));
   };
 
