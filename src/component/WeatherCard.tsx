@@ -9,7 +9,7 @@ const WeatherCard = (props: any) => {
   let navigate = useNavigate();
   const routeChange = () => {
     let path = `details`;
-    navigate(path);
+    navigate(path, { state: { props } });
   };
 
   return (

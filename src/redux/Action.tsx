@@ -6,3 +6,11 @@ const appid = "eb64305885b61f636c471c8298979a28";
 export const searchAction = (q: string) => {
   return axios.get(resetURl, { params: { q, appid } });
 };
+
+export const addToWishList = (data: any) => {
+  return {
+    type: "ADD_TO_WISHLIST",
+
+    data: data,
+  };
+};
