@@ -1,19 +1,3 @@
-// import { configureStore } from "@reduxjs/toolkit";
-
-// import { combineReducers } from "redux";
-
-// import weatherReducer from "./weatherReducer";
-
-// const allReducers = combineReducers({
-//   main: weatherReducer,
-// });
-
-// const store = configureStore({
-//   reducer: allReducers,
-// });
-
-// export default store;
-
 import { configureStore } from "@reduxjs/toolkit";
 import userReducer from "./weatherReducer";
 

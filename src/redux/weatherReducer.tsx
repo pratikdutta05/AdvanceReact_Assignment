@@ -1,20 +1,3 @@
-// const initState = {
-//   wishList: [],
-//   errors: "",
-// };
-
-// const cartReducer = (state = initState, action: any) => {
-//   switch (action.type) {
-//     case "ADD_TO_WISHLIST":
-//       state = Object.assign({}, state, { wishList: [...action.data] });
-//       return state;
-//     default:
-//       return state;
-//   }
-// };
-
-// export default cartReducer;
-
 import { createSlice } from "@reduxjs/toolkit";
 import { City } from "../interfaces";
 
