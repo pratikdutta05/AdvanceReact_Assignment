@@ -19,6 +19,32 @@ const WeatherDetails = () => {
   console.log(pic);
   var url: string = `https://openweathermap.org/img/wn/${pic}@4x.png`;
 
+  var stamp1 = location.state.props.weather.sys.sunrise;
+
+  var date1 = new Date(stamp1 * 1000);
+
+  var hours1 = date1.getHours();
+
+  var minutes1 = "0" + date1.getMinutes();
+
+  var seconds1 = "0" + date1.getSeconds();
+
+  var formattedTime1 =
+    hours1 + ":" + minutes1.substr(-2) + ":" + seconds1.substr(-2);
+
+  var stamp2 = location.state.props.weather.sys.sunset;
+
+  var date2 = new Date(stamp2 * 1000);
+
+  var hours2 = date2.getHours();
+
+  var minutes2 = "0" + date2.getMinutes();
+
+  var seconds2 = "0" + date2.getSeconds();
+
+  var formattedTime2 =
+    hours2 + ":" + minutes2.substr(-2) + ":" + seconds2.substr(-2);
+
   const addWish = () => {
     dispatch(addUser(location.state.props.weather));
   };
@@ -72,8 +98,8 @@ const WeatherDetails = () => {
       <div className="bottomRow">
         <div>
           <div className="heading">SUNRISE & SUNSET</div>
-          <div className="lengthDay">Length of day:</div>
-          <div className="remDay">Remaining daylight:</div>
+          <div className="lengthDay">Sunrise Time: {formattedTime1}</div>
+          <div className="remDay">Sunset Time: {formattedTime2}</div>
         </div>
       </div>
     </div>
